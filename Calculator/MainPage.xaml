@@ -1,0 +1,77 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MainPage">
+
+    <Grid Padding="10" RowSpacing="5" ColumnSpacing="5">
+        <!-- Define rows and columns for the calculator layout -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <!-- Display screen area -->
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Display Area -->
+        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Black"/>
+        <Label x:Name="displayLabel"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+               Text="0"
+               FontSize="24"
+               TextColor="White"
+               VerticalOptions="Center"
+               HorizontalOptions="End"
+               Padding="10"/>
+
+        <!-- Buttons for each calculator control -->
+        <!-- First Row -->
+        <Button Grid.Row="1" Grid.Column="0" Text="AC" BackgroundColor="LightGray" TextColor="Black" Clicked="OnClearButtonClicked"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="DEL" BackgroundColor="LightGray" TextColor="Black" Clicked="OnDeleteButtonClicked"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="SD" BackgroundColor="LightGray" TextColor="Black" Clicked="OnSwitchButtonClicked"/>
+        <Button Grid.Row="1" Grid.Column="3" Text="÷" BackgroundColor="Orange" TextColor="White" Clicked="OnDivisionButtonClicked"/>
+
+        <!-- Second Row -->
+        <Button Grid.Row="2" Grid.Column="0" Text="(" BackgroundColor="LightGray" TextColor="Black"/>
+        <Button Grid.Row="2" Grid.Column="1" Text=")" BackgroundColor="LightGray" TextColor="Black"/>
+        <!-- <Button Grid.Row="2" Grid.Column="2" Text="x²" BackgroundColor="LightGray" TextColor="Black" Clicked="OnPowerOfTwoButtonClicked"/> -->
+        <Button Grid.Row="2" Grid.Column="3" Text="xʸ" BackgroundColor="Orange" TextColor="White" Clicked="OnPowerOfXButtonClicked"/>
+
+        <!-- Third Row -->
+        <Button Grid.Row="3" Grid.Column="0" Text="7" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="8" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="9" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="3" Grid.Column="3" Text="×" BackgroundColor="Orange" TextColor="White" Clicked="OnOperatorButtonClicked"/>
+
+        <!-- Fourth Row -->
+        <Button Grid.Row="4" Grid.Column="0" Text="4" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="5" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="4" Grid.Column="2" Text="6" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="4" Grid.Column="3" Text="-" BackgroundColor="Orange" TextColor="White" Clicked="OnOperatorButtonClicked"/>
+
+        <!-- Fifth Row -->
+        <Button Grid.Row="5" Grid.Column="0" Text="1" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="5" Grid.Column="1" Text="2" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="5" Grid.Column="2" Text="3" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="5" Grid.Column="3" Text="+" BackgroundColor="Orange" TextColor="White" Clicked="OnOperatorButtonClicked"/>
+
+        <!-- Sixth Row (Adding Square Root and Cube Root Buttons) -->
+        <Button Grid.Row="2" Grid.Column="2" Text="√" BackgroundColor="LightGray" TextColor="Black" Clicked="OnSquareRootButtonClicked"/>
+        <!-- Square Root -->
+        <Button Grid.Row="6" Grid.Column="1" Text="∛" BackgroundColor="LightGray" TextColor="Black" Clicked="OnCubeRootButtonClicked"/>
+        <!-- Cube Root -->
+        <Button Grid.Row="6" Grid.Column="3" Text="=" BackgroundColor="Orange" TextColor="White" Clicked="OnEqualsButtonClicked"/>
+
+        <!-- Seventh Row -->
+        <Button Grid.Row="7" Grid.Column="0" Text="0" BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+        <Button Grid.Row="7" Grid.Column="2" Text="." BackgroundColor="DarkGray" TextColor="White" Clicked="OnNumericButtonClicked"/>
+    </Grid>
+</ContentPage>
